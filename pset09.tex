@@ -1,0 +1,103 @@
+\documentclass[a4paper]{exam}
+
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{titling}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usepackage{framed}
+
+% \graphicspath{{images/}}
+
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{axiom}{Axiom}
+\theoremstyle{claim}
+\newtheorem{claim}{Claim}
+
+% Header and footer.
+\pagestyle{headandfoot}
+\runningheadrule
+\runningfootrule
+\runningheader{CS/MATH 113 2025}{Pset 09: Structural and Strong Induction}{\theauthor}
+\runningfooter{}{Page \thepage\ of \numpages}{}
+\firstpageheader{}{}{}
+
+% \printanswers %Uncomment this line
+
+\title{Problem Set 09: Structural and Strong Induction}
+\author{Blingblong} % <=== replace with your student ID, e.g. xy012345
+\date{CS/MATH 113 Discrete Mathematics\\Habib University\\Spring 2025}
+
+
+% \qformat{{\large\bf \thequestion. \thequestiontitle}\hfill}
+% \boxedpoints
+
+
+\begin{document}
+\maketitle      
+
+
+\section*{Problems}
+\begin{questions}
+
+    \question The game of Chomp is played as follows. Start with a $n \times n$ array viewed as a chocolate bar, but with the lower left corner square poisoned. On each turn, a player chooses a square and eats this square and all other squares that lie above and to the right of this one (i.e. the northeast corner). The last player to eat a non-poison square wins. Show that in Chomp the first player has a winning strategy. 
+    \begin{solution}
+        % Enter your solution here.
+    \end{solution}
+    
+
+
+    \question Definition 5 in Section 5.3 of our textbook defines a \textit{full binary tree}. We extend this definition to a \textit{full $k$-ary tree} as follows.
+    \begin{framed}
+    \begin{definition}[Full $k$-ary tree]$\null$
+      
+      \underline{Basis Step} There is a full $k$-ary tree consisting only of a single vertex $r$.
+      
+      \underline{Recursive Step}  If $T_1,T_2, T_3,\ldots,T_k$ are disjoint full $k$-ary trees, there is a full $k$-ary tree, denoted by $T_1\cdot T_2\cdot T_3\cdot\ldots\cdot T_k$, consisting of a root $r$ together with edges connecting the root to each of the roots of $T_1,T_2, T_3,\ldots,T_k$.
+    \end{definition}
+  \end{framed}
+  We also introduce the following definitions of nodes in a tree.
+  \begin{definition}[Leaf node]
+    A leaf node in a tree is a node that has no children.
+  \end{definition}
+  \begin{definition}[Internal node]
+    An internal node in a tree is a node that is not a leaf node.
+  \end{definition}
+
+  Use structural induction to prove the following claim.
+  \begin{claim}
+    The number of internal nodes in a full $k$-ary tree with $n$ leaves is $\frac{n-1}{k-1}$.
+  \end{claim}
+  \begin{solution}
+    % Enter your solution here.
+  \end{solution}
+
+  \question Let $\lambda$ denote the empty string. Let $A$ be any finite nonempty set. A \textit{palindrome} over $A$ can be defined as a string that reads the same forward as backward. For example, ``Tacocat' and ``Tenet'' are palindromes over the English alphabet while ``Arizona'' is not a palindrome.
+
+  Consider the set, $S$, defined as follows:
+  \begin{itemize}
+  \item Basis: $\lambda \in S$ and $\forall a \in A (a \in S)$
+  \item Induction: $\forall a \in A\forall x \in S (axa \in S)$
+  \end{itemize}
+
+  Prove, using structural induction where appropriate, that $S$ equals the set of all palindromes over $A$.
+
+  Recall that a set-equality proof requires to show that both sides are subsets of each other. That is, you will have to show that an element of $S$ is a palindrome over $A$, and that any palindrome over $A$ is present in $S$.
+
+
+   
+
+\end{questions}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
